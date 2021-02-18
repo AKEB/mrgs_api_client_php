@@ -1,0 +1,34 @@
+{
+	"authors": [
+		{
+			"email": "babadzhanyan@corp.mail.ru",
+			"name": "Vadim Babajanyan",
+			"role": "Lead"
+		}
+	],
+	"autoload": {
+		"classmap": [
+			"./src/"
+		]
+	},
+	"description": "MRGS Api client for client requests and server requests",
+	"license": "BSD",
+	"name": "akeb/mrgs_api_client_php",
+	"support": {
+		"email": "babadzhanyan@corp.mail.ru",
+		"issues": "https://github.com/AKEB/mrgs_api_client_php/issues",
+		"wiki": "https://github.com/AKEB/mrgs_api_client_php/wiki",
+		"source": "https://github.com/AKEB/mrgs_api_client_php"
+	},
+	"type": "library",
+	"require": {
+		"php": "^5.4|^7.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^4|^5.7",
+		"phpmd/phpmd": "@stable"
+	},
+	"repositories": [
+		
+	]
+}
