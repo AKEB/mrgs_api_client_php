@@ -12,7 +12,7 @@
 		]
 	},
 	"description": "MRGS Api client for client requests and server requests",
-	"license": "BSD",
+	"license": "Apache-2.0",
 	"name": "akeb/mrgs_api_client_php",
 	"support": {
 		"email": "babadzhanyan@corp.mail.ru",
