@@ -4,12 +4,12 @@ error_reporting(E_ALL);
 
 class ClientRequestsTest extends PHPUnit\Framework\TestCase {
 
-	protected function setUp():void {
+	protected function setUp() {
 		new AKEB\MRGS\Authorize(getenv('MRGS_APP_ID'), getenv('MRGS_CLIENT_SECRET'));
 		\AKEB\MRGS\Authorize::getInstance()->authorize();
 	}
 
-	protected function tearDown():void {
+	protected function tearDown() {
 		\AKEB\MRGS\Authorize::getInstance()->unauthorize();
 	}
 
