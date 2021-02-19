@@ -16,12 +16,9 @@
 >
 	<testsuites>
 		<testsuite name="Tests">
-			<directory suffix=".php">./tests/</directory>
+			<directory suffix=".php">./Tests/</directory>
 		</testsuite>
 	</testsuites>
-	<php>
-		<!-- <env name="MRGS_APP_ID" value="" /> -->
-	</php>
 	<logging>
 		<log type="coverage-html" target="./tests/logs/report" charset="UTF-8" yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>
 	</logging>
