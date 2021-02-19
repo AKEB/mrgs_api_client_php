@@ -16,15 +16,24 @@ test:7.0:
 
 test:7.1:
   image: php:7.1
+  tags:
+    - myua
+    - docker
   script:
     - MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit -c phpunit.xml
 
 test:7.2:
   image: php:7.2
+  tags:
+    - myua
+    - docker
   script:
     - MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit -c phpunit.xml
 
 test:7.3:
   image: php:7.3
+  tags:
+    - myua
+    - docker
   script:
     - MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit -c phpunit.xml
