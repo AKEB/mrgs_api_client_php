@@ -8,17 +8,17 @@ before_script:
 
 test:7.0:
   image: php:7.0
-  # tags:
-  #   - myua
-  #   - docker
+  tags:
+    - myua
+    - docker
   script:
     - MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit -c phpunit.xml
 
 test:7.1:
   image: php:7.1
-  # tags:
-  #   - myua
-  #   - docker
+  tags:
+    - myua
+    - docker
   script:
     - MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit -c phpunit.xml
 
@@ -32,8 +32,8 @@ test:7.2:
 
 test:7.3:
   image: php:7.3
-  # tags:
-  #   - myua
-  #   - docker
+  tags:
+    - myua
+    - docker
   script:
     - MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit -c phpunit.xml
