@@ -10,7 +10,6 @@ before_install:
   - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
   - php composer.phar install --prefer-source --no-interaction
   - phpenv rehash
-  - echo ${MRGS_APP_ID}
 
 script:
-  - MRGS_APP_ID=${MRGS_APP_ID} php vendor/bin/phpunit -c phpunit.xml
+  - MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit -c phpunit.xml
