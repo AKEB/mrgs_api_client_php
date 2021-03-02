@@ -29,4 +29,4 @@ apt-get install wget git unzip -yqq && pecl install xdebug && docker-php-ext-ena
 # Here you can install any other extension that you need
 # docker-php-ext-install pdo_mysql
 
-php -i | grep xdebug
+echo `php -i | grep xdebug`
