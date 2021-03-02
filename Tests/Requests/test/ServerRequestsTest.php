@@ -34,14 +34,15 @@ class ServerRequestsTest extends PHPUnit\Framework\TestCase {
 		$this->assertArrayHasKey('fromCache', $response);
 		$this->assertArrayHasKey('serverTimeUnix', $response);
 		$this->assertArrayHasKey('serverTime', $response);
+		$this->assertArrayHasKey('action', $response);
+
+		$this->assertEquals($response['action'], 'test_syncServer');
 
 		$this->assertArrayHasKey('param1', $response['response']);
 		$this->assertArrayHasKey('param2', $response['response']);
-		$this->assertArrayHasKey('action', $response['response']);
 
 		$this->assertArrayNotHasKey('param3', $response['response']);
 
-		$this->assertEquals($response['response']['action'], 'syncServer');
 		$this->assertEquals($response['response']['param1'], $string1);
 		$this->assertEquals($response['response']['param2'], $string2);
 
@@ -67,13 +68,13 @@ class ServerRequestsTest extends PHPUnit\Framework\TestCase {
 		$this->assertArrayHasKey('fromCache', $response);
 		$this->assertArrayHasKey('serverTimeUnix', $response);
 		$this->assertArrayHasKey('serverTime', $response);
+		$this->assertArrayHasKey('action', $response);
 
-		$this->assertArrayHasKey('action', $response['response']);
+		$this->assertEquals($response['action'], 'test_asyncServer');
+
 		$this->assertArrayNotHasKey('param1', $response['response']);
 		$this->assertArrayNotHasKey('param2', $response['response']);
 		$this->assertArrayNotHasKey('param3', $response['response']);
-
-		$this->assertEquals($response['response']['action'], 'asyncServer');
 
 		$this->assertTrue($response['fromCache']);
 
@@ -99,13 +100,13 @@ class ServerRequestsTest extends PHPUnit\Framework\TestCase {
 		$this->assertArrayHasKey('fromCache', $response);
 		$this->assertArrayHasKey('serverTimeUnix', $response);
 		$this->assertArrayHasKey('serverTime', $response);
+		$this->assertArrayHasKey('action', $response);
 
-		$this->assertArrayHasKey('action', $response['response']);
+		$this->assertEquals($response['action'], 'test_kafkaServer');
+
 		$this->assertArrayNotHasKey('param1', $response['response']);
 		$this->assertArrayNotHasKey('param2', $response['response']);
 		$this->assertArrayNotHasKey('param3', $response['response']);
-
-		$this->assertEquals($response['response']['action'], 'kafkaServer');
 
 		$this->assertTrue($response['fromCache']);
 

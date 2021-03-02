@@ -21,8 +21,9 @@ class Authorize {
 	private $refreshTokenUrl = 'https://mrgs.my.games/oauth/token/';
 
 	public function __construct(int $appId, string $secret) {
+
 		if (!$appId) throw new Exception\AuthorizeException("AppId parameter is required", 400);
-		if (!$secret) throw new Exception\AuthorizeException("secret parameter is required", 400);
+		if (!$secret) throw new Exception\AuthorizeException("Secret parameter is required", 400);
 		$this->appId = intval($appId);
 		$this->secret = strval($secret);
 		if (!\class_exists('\\AKEB\\CurlGet')) {

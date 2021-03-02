@@ -3,3 +3,4 @@ composer.phar
 /vendor/
 /tests/logs/
 .env
+phpunit.log
