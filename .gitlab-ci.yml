@@ -1,6 +1,6 @@
 before_script:
   # - bash ci/docker_install.sh > /dev/null
-  - bash ci/docker_install.sh > /dev/null
+  - bash ci/docker_install.sh
   - export https_proxy=http://m100.cache.pvt:3128
   - export http_proxy=http://m100.cache.pvt:3128
   - curl -s http://getcomposer.org/installer | php
