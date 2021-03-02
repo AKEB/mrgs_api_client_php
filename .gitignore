@@ -4,3 +4,5 @@ composer.phar
 /tests/logs/
 .env
 phpunit.log
+php.sh
+.vscode/
