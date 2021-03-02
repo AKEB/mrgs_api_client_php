@@ -11,7 +11,11 @@ export http_proxy=http://m100.cache.pvt:3128
 # Install git (the php image doesn't have it) which is required by composer
 apt-get update -yqq
 # apt-get install wget git unzip -yqq
-apt-get install wget git unzip -yqq && pecl install xdebug && docker-php-ext-enable xdebug
+apt-get install wget git unzip php-xdebug -yqq
+
+pecl install xdebug
+
+docker-php-ext-enable xdebug
 
 { \
             echo "xdebug.mode=debug"; \
@@ -28,5 +32,7 @@ apt-get install wget git unzip -yqq && pecl install xdebug && docker-php-ext-ena
 # Install mysql driver
 # Here you can install any other extension that you need
 # docker-php-ext-install pdo_mysql
+
+php -v
 
 php -i | grep xdebug
