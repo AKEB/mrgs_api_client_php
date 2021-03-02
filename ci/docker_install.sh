@@ -11,11 +11,9 @@ export http_proxy=http://m100.cache.pvt:3128
 # Install git (the php image doesn't have it) which is required by composer
 apt-get update -yqq
 # apt-get install wget git unzip -yqq
-apt-get install wget git unzip php-xdebug -yqq
+apt-get install wget git unzip -yqq
 
-pecl install xdebug
-
-docker-php-ext-enable xdebug
+pecl install xdebug && docker-php-ext-enable xdebug
 
 { \
             echo "xdebug.mode=debug"; \
@@ -35,4 +33,3 @@ docker-php-ext-enable xdebug
 
 php -v
 
-php -i | grep xdebug
