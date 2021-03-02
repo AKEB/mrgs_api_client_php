@@ -10,10 +10,7 @@ export http_proxy=http://m100.cache.pvt:3128
 
 # Install git (the php image doesn't have it) which is required by composer
 apt-get update -yqq
-apt-get install git -yqq
-
-pecl install xdebug-2.7.1
-docker-php-ext-enable xdebug
+apt-get install git -yqq && pecl install xdebug-2.7.1 && docker-php-ext-enable xdebug
 
 # Install phpunit, the tool that we will use for testing
 # curl --location --output /usr/local/bin/phpunit "https://phar.phpunit.de/phpunit.phar"
