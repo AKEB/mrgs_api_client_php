@@ -35,4 +35,4 @@ pecl install xdebug && docker-php-ext-enable xdebug
 # docker-php-ext-install pdo_mysql
 
 php -v
-
+php -i | grep php.ini
