@@ -25,6 +25,7 @@ pecl install xdebug && docker-php-ext-enable xdebug
     echo "xdebug.client_port=9000"; \
 } > /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini; \
 
+echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20170718/xdebug.so" >> /usr/local/etc/php/php.ini
 
 # Install phpunit, the tool that we will use for testing
 # curl --location --output /usr/local/bin/phpunit "https://phar.phpunit.de/phpunit.phar"
@@ -35,4 +36,3 @@ pecl install xdebug && docker-php-ext-enable xdebug
 # docker-php-ext-install pdo_mysql
 
 php -v
-php -i | grep php.ini
