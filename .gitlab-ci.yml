@@ -46,4 +46,4 @@ test:7.3:
     https_proxy=http://m100.cache.pvt:3128
     http_proxy=http://m100.cache.pvt:3128
   script:
-    - https_proxy=http://m100.cache.pvt:3128 http_proxy=http://m100.cache.pvt:3128 PHP_ENABLE_XDEBUG=1 MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit --coverage-text --colors=never -c phpunit.xml
+    - PHP_ENABLE_XDEBUG=1 MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit --coverage-text --colors=never -c phpunit.xml
