@@ -19,13 +19,13 @@ pear config-set http_proxy http://m100.cache.pvt:3128
 pecl install xdebug && docker-php-ext-enable xdebug
 
 { \
-    echo "xdebug.mode=debug"; \
+    echo "xdebug.mode=coverage"; \
     echo "xdebug.start_with_request=yes"; \
     echo "xdebug.client_host=host.docker.internal"; \
     echo "xdebug.client_port=9000"; \
 } > /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini; \
 
-echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20170718/xdebug.so" >> /usr/local/etc/php/php.ini
+echo "zend_extension=xdebug.so" >> /usr/local/etc/php/php.ini
 
 # Install phpunit, the tool that we will use for testing
 # curl --location --output /usr/local/bin/phpunit "https://phar.phpunit.de/phpunit.phar"
