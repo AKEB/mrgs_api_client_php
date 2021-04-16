@@ -4,6 +4,10 @@ before_script:
   - php -v
   - export https_proxy=http://m100.cache.pvt:3128
   - export http_proxy=http://m100.cache.pvt:3128
+  - export MRGS_APP_ID=${MRGS_APP_ID}
+  - export MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET}
+  - export MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET}
+  - export PHP_ENABLE_XDEBUG=1
   - curl -s http://getcomposer.org/installer | php
   - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
   - php composer.phar install --prefer-source --no-interaction
@@ -12,38 +16,26 @@ test:7.0:
   image: php:7.0
   tags:
     - mrgs
-  environment:
-    https_proxy=http://m100.cache.pvt:3128
-    http_proxy=http://m100.cache.pvt:3128
   script:
-    - PHP_ENABLE_XDEBUG=1 MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit --coverage-text --colors=never -c phpunit.xml
+    - php vendor/bin/phpunit --coverage-text --colors=never -c phpunit.xml
 
 test:7.1:
   image: php:7.1
   tags:
     - mrgs
-  environment:
-    https_proxy=http://m100.cache.pvt:3128
-    http_proxy=http://m100.cache.pvt:3128
   script:
-    - PHP_ENABLE_XDEBUG=1 MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit --coverage-text --colors=never -c phpunit.xml
+    - php vendor/bin/phpunit --coverage-text --colors=never -c phpunit.xml
 
 test:7.2:
   image: php:7.2
   tags:
     - mrgs
-  environment:
-    https_proxy=http://m100.cache.pvt:3128
-    http_proxy=http://m100.cache.pvt:3128
   script:
-    - PHP_ENABLE_XDEBUG=1 MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit --coverage-text --colors=never -c phpunit.xml
+    - php vendor/bin/phpunit --coverage-text --colors=never -c phpunit.xml
 
 test:7.3:
   image: php:7.3
   tags:
     - mrgs
-  environment:
-    https_proxy=http://m100.cache.pvt:3128
-    http_proxy=http://m100.cache.pvt:3128
   script:
     - PHP_ENABLE_XDEBUG=1 MRGS_APP_ID=${MRGS_APP_ID} MRGS_CLIENT_SECRET=${MRGS_CLIENT_SECRET} MRGS_SERVER_SECRET=${MRGS_SERVER_SECRET} php vendor/bin/phpunit --coverage-text --colors=never -c phpunit.xml
