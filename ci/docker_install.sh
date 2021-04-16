@@ -14,7 +14,7 @@ apt-get update -yqq
 apt-get install wget git unzip -yqq
 
 pear config-set http_proxy http://m100.cache.pvt:3128
-pear config-set https_proxy http://m100.cache.pvt:3128
+# pear config-set https_proxy http://m100.cache.pvt:3128
 
 pecl install xdebug && docker-php-ext-enable xdebug
 
