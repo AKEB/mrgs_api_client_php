@@ -12,7 +12,6 @@ abstract class Request {
 
 	protected $baseUrl = 'https://mrgs-api.my.games/api/';
 
-
 	protected function _request() {
 		$auth = \AKEB\MRGS\Authorize::getInstance();
 		if (!$auth || !$auth->isAuthorized()) throw new Exception\RequestException("Authorize first need!", 405);
