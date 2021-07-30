@@ -14,7 +14,11 @@ class add extends \AKEB\MRGS\Request {
 		}
 	}
 
-	public function setEvent(array $event) {
+	public function setEvents(array $events) {
+		$this->events = $events;
+	}
+
+	public function addEvent(array $event) {
 		$this->events[] = $event;
 	}
 
