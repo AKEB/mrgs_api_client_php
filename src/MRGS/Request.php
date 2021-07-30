@@ -7,6 +7,7 @@ abstract class Request {
 	protected $scopes = ['client', 'server'];
 
 	protected $POST = [];
+	protected $BODY = [];
 	protected $GET = [];
 	protected $HEADER = [];
 
@@ -22,6 +23,7 @@ abstract class Request {
 		$url = $this->baseUrl . ( $auth->getAppId() ) . '/' . ( $this->path );
 		$this->HEADER[] = 'Authorization: ' . ( $auth->getTokenType() ) . ' ' . ( $auth->getAccessToken() );
 		$curl = new \AKEB\CurlGet($url, $this->GET, $this->POST, $this->HEADER);
+		if ($this->BODY) $curl->setBody(json_encode($this->BODY));
 		$curl->timeout = 30;
 		$curl->exec();
 

@@ -9,9 +9,9 @@ class kafkaServer extends \AKEB\MRGS\Request {
 	public $param1;
 	public $param2;
 
-	public function __construct(array $POST=[]) {
-		if ($POST) {
-			$this->POST = $POST;
+	public function __construct(array $BODY=[]) {
+		if ($BODY) {
+			$this->BODY = $BODY;
 		}
 	}
 
@@ -24,8 +24,8 @@ class kafkaServer extends \AKEB\MRGS\Request {
 	}
 
 	public function send() {
-		if (isset($this->param1)) $this->POST['param1'] = $this->param1;
-		if (isset($this->param2)) $this->POST['param2'] = $this->param2;
+		if (isset($this->param1)) $this->BODY['param1'] = $this->param1;
+		if (isset($this->param2)) $this->BODY['param2'] = $this->param2;
 
 		$response = $this->_request();
 		return $response;
