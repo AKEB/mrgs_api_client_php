@@ -34,5 +34,3 @@ echo "zend_extension=xdebug.so" >> /usr/local/etc/php/php.ini
 # Install mysql driver
 # Here you can install any other extension that you need
 # docker-php-ext-install pdo_mysql
-
-php -v

@@ -1,7 +1,6 @@
 before_script:
   # - bash ci/docker_install.sh > /dev/null
   - bash ci/docker_install.sh
-  - php -v
   - export https_proxy=http://m100.cache.pvt:3128
   - export http_proxy=http://m100.cache.pvt:3128
   - export MRGS_APP_ID=${MRGS_APP_ID}
